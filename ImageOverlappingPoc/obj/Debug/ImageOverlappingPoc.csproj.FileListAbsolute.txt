@@ -1,0 +1,13 @@
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\ImageOverlappingPoc.exe.config
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\ImageOverlappingPoc.exe
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\ImageOverlappingPoc.pdb
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\obj\Debug\ImageOverlappingPoc.exe
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\obj\Debug\ImageOverlappingPoc.pdb
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\obj\Debug\ImageOverlappingPoc.csprojAssemblyReference.cache
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\obj\Debug\ImageOverlappingPoc.csproj.CoreCompileInputs.cache
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\obj\Debug\ImageOverlappingPoc.csproj.CopyComplete
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\Magick.NET-Q16-x86.Native.dll
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\Magick.NET-Q16-x86.dll
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\Magick.NET-Q16-x86.xml
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\Ghostscript.NET.dll
+C:\inetpub\wwwroot\ImageOverlapping\ImageOverlappingPoc\ImageOverlappingPoc\bin\Debug\Ghostscript.NET.xml
