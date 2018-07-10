@@ -2,3 +2,11 @@ packages/*
 ImageOverlappingPoc/bin/*
 ImageOverlappingPoc/obj/*
 
+
+\.vs/ImageOverlappingPoc/v15/\.suo
+
+\.vs/ImageOverlappingPoc/v15/Server/sqlite3/storage\.ide
+
+\.vs/ImageOverlappingPoc/v15/Server/sqlite3/storage\.ide-shm
+
+\.vs/ImageOverlappingPoc/v15/Server/sqlite3/storage\.ide-wal

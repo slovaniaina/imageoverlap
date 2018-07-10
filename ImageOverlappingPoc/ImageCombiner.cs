@@ -64,34 +64,64 @@ namespace ImageOverlappingPoc
                     var imageRotation = Constants.PackPersonalizationPdfSettings.UserImage.Rotation;
                     userImage.Page = new MagickGeometry(imageXPosition, imageYPosition, 0, 0);
                     userImage.Rotate(imageRotation);
+                    Console.WriteLine(
+                        $"user image size : width {userImage.Width} height {userImage.Height}");
+                    userImage.Format = MagickFormat.Jpeg;
                     mergedImage.Add(userImage);
 
+                    var backgroundImageFormat =
+                        ConfigurationManager.AppSettings["UseAiFormat"] != null &&
+                        bool.Parse(ConfigurationManager.AppSettings["UseAiFormat"])
+                            ? MagickFormat.Ai
+                            : MagickFormat.Eps;
                     if (KeepEpsFormat)
                     {
-                        #region keep the EPS format
                         Console.WriteLine(
                             $"background before : width {backgroundImageClone.Width} height {backgroundImageClone.Height}");
-                        backgroundImageClone.Page = new MagickGeometry(imageXPosition, imageYPosition, 0, 0);
-                        backgroundImageClone.Resize(2480, 3508);
+                        backgroundImageClone.Page = new MagickGeometry(100, 200, 0, 0);
+                        backgroundImageClone.Format = backgroundImageFormat;
+                        backgroundImageClone.ColorSpace = ColorSpace.RGB;
+                        backgroundImageClone.Quality = 75;
+                        backgroundImageClone.Density = new Density(300);
+                        backgroundImageClone.Depth = 300;
+                        //backgroundImageClone.ColorF
+                        backgroundImageClone.Transparent(MagickColors.White);
+                        //backgroundImageClone.Resize(2048, 1782);
+                        backgroundImageClone.Resize(3072, 2673);
                         Console.WriteLine(
                             $"background after : width {backgroundImageClone.Width} height {backgroundImageClone.Height}");
                         mergedImage.Add(backgroundImageClone);
-                        #endregion
                     }
                     else
                     {
-                        #region convert the backgroundimage to PNG
+                        //backgroundImageClone.Page = new MagickGeometry(100, 200, 0, 0);
+                        //backgroundImageClone.Format = MagickFormat.Eps;
+                        //backgroundImageClone.ColorSpace = ColorSpace.sRGB;
+                        //backgroundImageClone.Quality = 100;
+                        //backgroundImageClone.Density = new Density(300);
+                        //backgroundImageClone.Depth = 300;
+                        //backgroundImageClone.Resize(3072, 2673);
                         Console.WriteLine("Convert the EPS image to PNG");
-                        backgroundImageClone.Write("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-PNGfile.png");
-                        var backgroundImageClonePng = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-PNGfile.png");
+                        backgroundImageClone.Write("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-PNGfile-40.png");
+                        var backgroundImageClonePng =
+                            new MagickImage(
+                                "C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-PNGfile-40.png")
+                            {
+                                Page = new MagickGeometry(100, 200, 0, 0),
+                                Format = MagickFormat.Png,
+                                ColorSpace = ColorSpace.sRGB,
+                                Quality = 100,
+                                Density = new Density(300),
+                                Depth = 300
+                            };
                         Console.WriteLine(
                             $"background before : width {backgroundImageClonePng.Width} height {backgroundImageClonePng.Height}");
-                        backgroundImageClonePng.Page = new MagickGeometry(imageXPosition, imageYPosition, 0, 0);
-                        backgroundImageClonePng.Resize(2480, 3508);
+                        //backgroundImageClonePng.Page = new MagickGeometry(imageXPosition, imageYPosition, 0, 0);
+                        //backgroundImageClonePng.Resize(2480, 3508);
+                        backgroundImageClonePng.Resize(3072, 2673);
                         Console.WriteLine(
                             $"background after : width {backgroundImageClonePng.Width} height {backgroundImageClonePng.Height}");
                         mergedImage.Add(backgroundImageClonePng);
-                        #endregion
                     }
 
                     textImage.Resize(Constants.PackPersonalizationPdfSettings.UserText.UserTextResizedWidth,

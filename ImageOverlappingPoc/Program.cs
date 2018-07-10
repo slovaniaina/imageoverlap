@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,9 @@ namespace ImageOverlappingPoc
                 #region test with MB code
                 //var background = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\svg-background.svg");
                 //var background = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\frame-compressed.svg");
-                var background = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-EPSfile.eps");
+                var background = ConfigurationManager.AppSettings["UseAiFormat"] != null &&
+                                 bool.Parse(ConfigurationManager.AppSettings["UseAiFormat"]) ? new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-Aillustrator.ai") 
+                                 : new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\image-background-EPSfile.eps");
                 //var background = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\PNGBackGroung.png");
                 var userImage = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\UGC.jpeg");
                 //var userImage = new MagickImage("C:\\Users\\aandrian\\Documents\\MB\\Image_Overlapping_POC\\Small-mario.png");
